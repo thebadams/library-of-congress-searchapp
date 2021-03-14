@@ -32,7 +32,7 @@ function searchSubmit(){
         console.error("You Must Enter a Search Query");
         return
     }
-    var queryString = `./searchresults.html?q=${searchQuery}format=${formatValue}`
+    var queryString = `./searchresults.html?q=${searchQuery}&format=${formatValue}`
     location.assign(queryString);
 }
 
