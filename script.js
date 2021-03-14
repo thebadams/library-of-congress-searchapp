@@ -2,8 +2,14 @@ var searchQueryBox = document.querySelector("#search");
 var searchQuery = searchQueryBox.value
 var formatDropdown = document.querySelector("#format");
 var formatValue = formatDropdown.value
-var requestUrl = `https://www.loc.gov/search/${formatValue}/?q=${searchQuery}&fo=json`
+// var requestUrl = `https://www.loc.gov/search/${formatValue}/?q=${searchQuery}&fo=json`
 
+var searchBtn = document.querySelector("#search-btn")
+
+searchBtn.addEventListener("click", (event)=>{
+    event.preventDefault();
+    searchSubmit();
+})
 // function searchLibraryOfCongress(){
 //     searchQuery = searchQueryBox.value;
 //     formatValue = formatDropdown.value;
@@ -29,5 +35,7 @@ function searchSubmit(){
     var queryString = `./searchresults.html?q=${searchQuery}format=${formatValue}`
     location.assign(queryString);
 }
+
+
 
 //https://www.loc.gov/search/{format}/?q={searchQuery}&fo=json
